@@ -42,9 +42,12 @@ Type=simple
 User=<userName>
 WorkingDirectory=/<full_path_to_folder>
 ExecStart=/<full_path_to_folder>/.venv/bin/python main.py daemon
+Environment="PYTHONPATH=<full_path_to_folder>"
 EnvironmentFile=/<full_path_to_folder>/.env
 Restart=always
 RestartSec=10
+StandardOutput=journal
+StandardError=journal
 
 [Install]
 WantedBy=multi-user.target

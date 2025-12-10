@@ -1,3 +1,31 @@
+need create .env file with data:
+
+```text
+ZULIP_EMAIL=<user_email>
+ZULIP_API_KEY=<api_key>
+ZULIP_SITE=https://<sub_domain>.zulipchat.com
+START_WORK_TIME=10 #your_start_work_time
+END_WORK_TIME=18 #your_end_work_time
+TIMEZONE=Europe/Moscow #or other tz
+```
+
+need create statuses.py file with data:
+
+**example**
+
+```python
+# список статусов из которых рандомно будет выбираться самый первый статус ежедневно
+FIRST_STATUSES = [
+    {"text": "Солнце взошло, пора работать", "emoji": "sunrise"},
+]
+
+# список остальных статусов
+STATUSES = [
+    {"text": "Я устал", "emoji": "brain"},
+]
+```
+
+
 ```bash
 .venv/bin/pip install zulip python-dotenv requests # in project folder
 sudo nano /etc/systemd/system/zulip-status.service
